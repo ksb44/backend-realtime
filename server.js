@@ -1,9 +1,16 @@
 import express from 'express';
 import http from 'http';
 import { Server } from 'socket.io';
-import { ACTIONS } from '../utility/Actions.js';
 import debounce from 'lodash.debounce';
+const ACTIONS={
+    JOIN:'join',
+    JOINED:'joined',
+    DISCONNECTED:'disconnected',
+    CODE_CHANGE:'code-change',
+    SYNC_CODE:'sync-code',
+    LEAVE:'leave',
 
+}
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
